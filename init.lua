@@ -2,8 +2,6 @@ require("config.lazy")
 
 local indentspace = 2
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 vim.o.tabstop = indentspace
 vim.o.shiftwidth = indentspace
 vim.o.expandtab = true

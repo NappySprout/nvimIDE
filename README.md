@@ -12,6 +12,7 @@ git clone https://github.com/NappySprout/nvimIDE ~/.config/nvim
 - \<leader\>\<space\> fzf files
 - \<leader\>b fzf buffers
 - \<leader\>gg lazygit
+- \<leader\>ft terminal
 
 ### Mini
 - \<select object\>sa<char> surround object with char 

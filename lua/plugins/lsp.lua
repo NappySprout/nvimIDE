@@ -25,3 +25,4 @@ return {
     vim.lsp.enable('basedpyright')
   end
 }
+-- :h lspconfig-all is helpful to enable lsp

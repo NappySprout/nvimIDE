@@ -23,6 +23,11 @@ vim.o.tabstop = indentspace
 vim.o.shiftwidth = indentspace
 vim.o.expandtab = true
 
+vim.keymap.set('n', '<leader>l', '<c-w>l')
+vim.keymap.set('n', '<leader>k', '<c-w>k')
+vim.keymap.set('n', '<leader>j', '<c-w>j')
+vim.keymap.set('n', '<leader>h', '<c-w>h')
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

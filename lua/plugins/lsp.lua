@@ -22,6 +22,16 @@ return {
     }
   },
   config = function()
+    vim.api.nvim_create_autocmd('LspAttach', {
+      callback = function(event)
+        local map = function(keys, func, desc, mode)
+            mode = mode or 'n'
+            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+        end
+        map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
+        map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+      end
+    })
   end
 }
 -- :h lspconfig-all is helpful to enable lsp

@@ -1,6 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
+    {'mason-org/mason-lspconfig.nvim', opts = {automatic_enable = true}},
     {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -21,8 +22,6 @@ return {
     }
   },
   config = function()
-    vim.lsp.enable('lua_ls')
-    vim.lsp.enable('basedpyright')
   end
 }
 -- :h lspconfig-all is helpful to enable lsp

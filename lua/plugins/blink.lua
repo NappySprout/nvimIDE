@@ -10,6 +10,7 @@ return {
       preset = 'default',
       ['<CR>'] = { 'select_and_accept', 'fallback' },
     },
+    signature = { enabled = true }
   },
   opts_extend = { "sources.default" },
 }

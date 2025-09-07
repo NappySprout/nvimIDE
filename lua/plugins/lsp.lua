@@ -1,0 +1,27 @@
+return {
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
+    {
+      "mason-org/mason.nvim",
+      opts = {},
+      keys = {
+        { "<leader>cm", '<cmd>Mason<CR>', desc = "Mason" },
+      },
+    }
+  },
+  config = function()
+    vim.lsp.enable('lua_ls')
+    vim.lsp.enable('basedpyright')
+  end
+}

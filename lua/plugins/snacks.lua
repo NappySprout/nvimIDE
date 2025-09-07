@@ -13,5 +13,6 @@ return {
     { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Lazygit" },
+    { "<leader>ft", function() Snacks.terminal() end, desc = "Toggle Terminal" },
   }
 }

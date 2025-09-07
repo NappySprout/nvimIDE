@@ -15,19 +15,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local indentspace = 2
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.o.tabstop = indentspace
-vim.o.shiftwidth = indentspace
-vim.o.expandtab = true
-
-vim.keymap.set('n', '<leader>l', '<c-w>l')
-vim.keymap.set('n', '<leader>k', '<c-w>k')
-vim.keymap.set('n', '<leader>j', '<c-w>j')
-vim.keymap.set('n', '<leader>h', '<c-w>h')
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

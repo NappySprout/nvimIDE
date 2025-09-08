@@ -6,10 +6,10 @@ vim.o.tabstop = indentspace
 vim.o.shiftwidth = indentspace
 vim.o.expandtab = true
 
-vim.keymap.set('n', '<leader>l', '<c-w>l')
-vim.keymap.set('n', '<leader>k', '<c-w>k')
-vim.keymap.set('n', '<leader>j', '<c-w>j')
-vim.keymap.set('n', '<leader>h', '<c-w>h')
+vim.keymap.set('n', '<c-l>', '<c-w>l')
+vim.keymap.set('n', '<c-k>', '<c-w>k')
+vim.keymap.set('n', '<c-j>', '<c-w>j')
+vim.keymap.set('n', '<c-h>', '<c-w>h')
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -44,3 +44,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 vim.cmd("colorscheme kanagawa-wave")
+vim.keymap.set('n', 'L', '<cmd>bn<CR>')
+vim.keymap.set('n', 'H', '<cmd>bn<CR>')
+vim.keymap.set('n', ' bd', ':bp<bar>sp<bar>bn<bar>bd<CR>')
+vim.keymap.set('n', ' bo', function()
+  local cur = vim.api.nvim_get_current_buf()
+  local buffs = vim.api.nvim_list_bufs()
+  for i = 1, #buffs do
+    local buff =  buffs[i]
+    if buff ~= cur then
+      vim.api.nvim_buf_delete(buff, {})
+    end
+  end
+end)

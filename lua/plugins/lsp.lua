@@ -27,6 +27,7 @@ return {
         end
         map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
         map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+        map('gd', vim.lsp.buf.definition, '[G]oto [R]eferences')
       end
     })
     local home = os.getenv('HOME')

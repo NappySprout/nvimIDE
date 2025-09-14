@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 vim.cmd("colorscheme kanagawa-wave")
 vim.keymap.set('n', 'L', '<cmd>bn<CR>')
-vim.keymap.set('n', 'H', '<cmd>bn<CR>')
+vim.keymap.set('n', 'H', '<cmd>bN<CR>')
 vim.keymap.set('n', ' bd', ':bp<bar>sp<bar>bn<bar>bd<CR>')
 vim.keymap.set('n', ' bo', function()
   local cur = vim.api.nvim_get_current_buf()

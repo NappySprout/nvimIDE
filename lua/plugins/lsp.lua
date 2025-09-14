@@ -1,13 +1,13 @@
 return {
   'neovim/nvim-lspconfig',
+  lazy = false,
   dependencies = {
     {
       "folke/lazydev.nvim",
       ft = "lua",
       opts = {
         library = {
-          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-        },
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } }, },
       },
     },
     {
@@ -34,8 +34,8 @@ return {
     local workspace_path = home .. '/.local/share/nvim/jdtls-workspace/'
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
     local workspace_dir = workspace_path .. project_name
-
-    vim.lsp.config('jdtls', {
+    vim.lsp.enable('lua_ls')
+    vim.lsp.config['jdtls'] = {
       -- Use root_markers for clean project root detection
       root_markers = { 'pom.xml', 'build.gradle', '.git' },
       cmd = {
@@ -71,6 +71,8 @@ return {
           },
         },
       },
-    })
+    }
+    vim.lsp.enable('jdtls')
+
   end
 }

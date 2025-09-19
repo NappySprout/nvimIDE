@@ -1,4 +1,4 @@
-local indentspace = 2
+local indentspace = 4
 
 vim.o.tabstop = indentspace
 vim.o.shiftwidth = indentspace

@@ -19,18 +19,6 @@ return {
     }
   },
   config = function()
-    vim.api.nvim_create_autocmd('LspAttach', {
-      callback = function(event)
-        local map = function(keys, func, desc, mode)
-          mode = mode or 'n'
-          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
-        map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
-        map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-        map('gd', vim.lsp.buf.definition, '[G]oto [D]efintion')
-        map('<leader>cr', vim.lsp.buf.rename, '[G]oto [D]efintion')
-      end
-    })
     local home = os.getenv('HOME')
     local workspace_path = home .. '/.local/share/nvim/jdtls-workspace/'
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')

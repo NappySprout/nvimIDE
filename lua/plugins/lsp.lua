@@ -62,6 +62,7 @@ return {
       },
     }
     vim.lsp.enable('jdtls')
+    vim.lsp.enable('basedpyright')
 
   end
 }
